@@ -2,8 +2,19 @@ using System;
 
 class Program
 {
+    static void DisplayGreeting(string name)
+    {
+        Console.WriteLine($"Welcome {name}, how are you?");
+    }
+
     static void Main(string[] args)
     {
+        double answer = AddThemNumbers(12.234, 10);
+        Console.WriteLine(answer);
+
+        DisplayGreeting("Bob");
+
+
     //     int x = 8;
     //     int y = 14;
     //     int z = 40;
@@ -53,6 +64,5 @@ class Program
             return x + y;
         }
 
-        AddThemNumbers(5, 3);
     }
 }

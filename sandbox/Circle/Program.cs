@@ -5,8 +5,7 @@ class Program
     {
         Console.WriteLine("Hey, sup dude.");
 
-        Circle myCircle = new Circle();
-        myCircle._radius = 10;
+        Circle myCircle = new Circle(16);
 
         double area = myCircle.GetArea();
 

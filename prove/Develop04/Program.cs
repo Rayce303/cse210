@@ -4,8 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        BaseActivity activity = new BaseActivity();
-        // activity.RunCountdownMessage("Get Ready", 5);
-        activity.DisplaySpinnerMessage("Well Done", 5);
+        BreathingActivity breathe = new BreathingActivity("Breathing", "This is how 2 breathe");
+        breathe.RunActivity();
     }
 }

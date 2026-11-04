@@ -8,12 +8,14 @@ class BreathingActivity : BaseActivity
 
     public void RunActivity()
     {
-        DateTime endTime = DateTime.Now.AddSeconds(15);
-
+        StartActivity();
+        DateTime endTime = DateTime.Now.AddSeconds(GetDuration());
+        Console.Clear();
         while (DateTime.Now < endTime)
         {
             RunCountdownMessage("Breathe In . . .", 4);
             RunCountdownMessage("Breathe Out . . .", 6);
         }
+        DisplayEnding();
     }
 }

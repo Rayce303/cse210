@@ -12,12 +12,18 @@ class BaseActivity
 
     protected void StartActivity()
     {
-        
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_name}!");
+        Console.WriteLine($"{_description}");
+        Console.Write("How many seconds would you like this activity to last? ");
+        string input = Console.ReadLine();
+        _duration = int.Parse(input);
     }
 
     protected void DisplayEnding()
     {
-        
+        Console.Clear();
+        DisplaySpinnerMessage("Well Done!  ", 5);
     }
 
     protected void RunCountdownMessage(string message, int seconds)
@@ -40,12 +46,18 @@ class BaseActivity
         DateTime endTime = DateTime.Now.AddSeconds(seconds);
         while (DateTime.Now < endTime)
         {
-            Console.Write("+");
+            Console.Write("Oooo");
             Thread.Sleep(200);
-            Console.Write("\b");
-            Console.Write("-");
+            Console.Write("\b\b\b\b");
+            Console.Write("oOoo");
             Thread.Sleep(200);
-            Console.Write("\b");
+            Console.Write("\b\b\b\b");
+            Console.Write("ooOo");
+            Thread.Sleep(200);
+            Console.Write("\b\b\b\b");
+            Console.Write("oooO");
+            Thread.Sleep(200);
+            Console.Write("\b\b\b\b");
         }
 
         Console.Clear();
@@ -62,10 +74,10 @@ class BaseActivity
         
     // }
 
-    // protected void ObtainDuration()
-    // {
-        
-    // }
+    protected int GetDuration()
+    {
+        return _duration;
+    }
 
     // protected string GetPromptString(List<FlaggedString>)
     // {

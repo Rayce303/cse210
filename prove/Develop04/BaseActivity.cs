@@ -3,7 +3,6 @@ class BaseActivity
     private string _name;
     private string _description;
     private int _duration;
-    private DateTime _endTime;
     public BaseActivity(string name, string description)
     {
         _name = name;
@@ -18,12 +17,13 @@ class BaseActivity
         Console.Write("How many seconds would you like this activity to last? ");
         string input = Console.ReadLine();
         _duration = int.Parse(input);
+        DisplaySpinnerMessage("Get Ready...  ", 5);
     }
 
     protected void DisplayEnding()
     {
         Console.Clear();
-        DisplaySpinnerMessage("Well Done!  ", 5);
+        DisplaySpinnerMessage("Well Done!   ", 5);
     }
 
     protected void RunCountdownMessage(string message, int seconds)
@@ -64,23 +64,8 @@ class BaseActivity
         Console.CursorVisible = true;
     }
 
-    // protected void StartTime()
-    // {
-        
-    // }
-
-    // protected bool HasTimerExpired()
-    // {
-        
-    // }
-
     protected int GetDuration()
     {
         return _duration;
     }
-
-    // protected string GetPromptString(List<FlaggedString>)
-    // {
-        
-    // }
 }

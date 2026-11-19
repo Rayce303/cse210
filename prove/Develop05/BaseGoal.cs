@@ -1,10 +1,10 @@
 abstract class BaseGoal
 {
-    private string _name;
-    private string _description;
-    private int _points;
-    private bool _complete;
-    private string _goalType;
+    protected string _name;
+    protected string _description;
+    protected int _points;
+    protected bool _complete;
+    protected string _goalType;
     public BaseGoal(string name, string description, int points, bool status, string goalType)
     {
         _name = name;
@@ -22,19 +22,19 @@ abstract class BaseGoal
         _goalType = goalType;
     }
 
-    private void SetGoalName()
+    protected void SetGoalName()
     {
         Console.Write("Please enter the name of your goal: ");
         _name = Console.ReadLine();
     }
 
-    private void SetGoalDescription()
+    protected void SetGoalDescription()
     {
         Console.Write("Please enter the description of your goal: ");
         _description = Console.ReadLine();
     }
 
-    private void SetGoalPoints()
+    protected void SetGoalPoints()
     {
         Console.Write($"Please enter the number of points for your goal {_name}: ");
         _points = int.Parse(Console.ReadLine());
@@ -46,7 +46,12 @@ abstract class BaseGoal
         if (_complete)
             completeString = "X";
 
-        return $"[{completeString}] - {_goalType}: {_name}, Description: {_description}, Points: {_points}";
+        return $"[{completeString}] - {_goalType}: {_name} ({_description}), Points: {_points}";
+    }
+
+    public virtual string GetFileSystemString()
+    {
+        return $"{_goalType}#{_name}#{_description}#{_points}#{_complete}";
     }
 
     public int MarkComplete()
